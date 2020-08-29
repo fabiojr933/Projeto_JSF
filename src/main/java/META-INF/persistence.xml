@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="projetojsf01">
+	
+	
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+	<class>br.com.Entidades.Pessoa</class>
+	<class>br.com.Entidades.Lancamento</class>
+	<class>br.com.Entidades.Cidades</class>
+	<class>br.com.Entidades.Estados</class>
+		<properties>   
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/javahibernate"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> 
+			<property name="hibernate.connection.username" value="postgres"/>
+			<property name="hibernate.connection.password" value="postgres"/>			
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+	    	<property name="hibernate.hbm2ddl.auto" value="update" /> 
+	    	
+	    	 
+	    				<!-- minimo de conexao ou portas disponivel -->
+			<property name="hibernate.c3p0.min_size" value="5"/>
+			
+			<!-- maximo de conexao ou portas disponivel -->
+			<property name="hibernate.c3p0.max_size" value="10"/>
+			
+			<!-- munero de segundo de uma conexao inativa é mantida no pool -->
+			<property name="hibernate.c3p0.timeout" value="300"/>
+			
+			<!-- munero total de instruçoes, operaçoes, transação sql mantida em cache -->
+			<property name="hibernate.c3p0.max_statements" value="30"/>
+			
+			<!-- tempo ocioso em segundo antes de uma conexao ser validada automaticamente -->
+			<property name="hibernate.c390.idle._test_period" value="120"/>
+			
+		</properties>
+	
+	</persistence-unit>
+</persistence>
